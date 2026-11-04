@@ -15,7 +15,7 @@ def design(prompt, ball_trajectory):
 
     image_documents = SimpleDirectoryReader(os.path.join(parent_dir, "frames")).load_data()
     openai_mm_llm = OpenAIMultiModal(
-            model="gpt-4o-2024-05-13", api_key='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', max_new_tokens=1500
+            model="gpt-4o-2024-05-13", api_key=os.environ['OPENAI_API_KEY'], max_new_tokens=1500
         )
 
     tools = ['Ramp: simulate inclined surfaces over which balls can roll or slide. This is used when you want a gradual change in direction or need to guide the ball smoothly over a distance. Length of the ramp can be 10, 14, 18. You must say whether the ball needs to move to the left or right.', 
