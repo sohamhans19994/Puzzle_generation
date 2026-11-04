@@ -1,14 +1,13 @@
- 
+import os
 import gym
 from PIL import Image
 from create.create_game import register_json_folder, register_json_str
 import json
-current_dir = os.path.dirname(__file__)
-parent_dir = os.path.dirname(current_dir)
+repo_dir = os.path.dirname(os.path.abspath(__file__))
 
-starter_json_file = os.path.join(parent_dir, "example_puzzle_layout.json")
+starter_json_file = os.path.join(repo_dir, "example_puzzle_layout.json")
 
-visualization_path = os.path.join(parent_dir, "example_puzzle.jpg")
+visualization_path = os.path.join(repo_dir, "example_puzzle.jpg")
 with open(starter_json_file, 'r') as json_file:
             env_json = json.load(json_file)
 starter_json_str = json.dumps(env_json)

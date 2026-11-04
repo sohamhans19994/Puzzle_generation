@@ -4,8 +4,8 @@ from llama_index.core import SimpleDirectoryReader
 from llama_index.multi_modal_llms.openai import OpenAIMultiModal
 
 ####### add your openai key
-os.environ["REPLICATE_API_TOKEN"] = ""
-os.environ['OPENAI_API_KEY'] = ''
+os.environ.setdefault("REPLICATE_API_TOKEN", "")
+os.environ.setdefault('OPENAI_API_KEY', '')
 
 
 def design(prompt, ball_trajectory):

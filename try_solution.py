@@ -1,7 +1,9 @@
 
 # Import `create_game` package, wherever it is located for you. 
+import os
 import sys
-sys.path.insert(0, '/home/bili/Desktop/scenario_generation_llm')
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, REPO_DIR)
 from create.create_game import register_json_folder, register_json_str
 from create.create_game.create_game import CreateGame
 
@@ -32,8 +34,8 @@ def convert_to_frames():
         This function converts the simulation to frames.
         It does not take any inputs.
         """
-        frames_path = "/home/bili/Desktop/scenario_generation_llm/frames"
-        animation_path = "/home/bili/Desktop/scenario_generation_llm/ani_10.mp4"
+        frames_path = os.path.join(REPO_DIR, "frames")
+        animation_path = os.path.join(REPO_DIR, "ani_10.mp4")
 
         def extract_frames(video_path, output_folder, frame_rate):
             if not os.path.exists(output_folder):
@@ -75,7 +77,7 @@ def convert_to_frames():
 def main():
     
     i =10
-    with open(f'/home/bili/Desktop/scenario_generation_llm/example_puzzle_layout.json', 'r') as f:
+    with open(os.path.join(REPO_DIR, 'example_puzzle_layout.json'), 'r') as f:
         data = json.load(f)
 
     json_str = json.dumps(data)
@@ -85,7 +87,7 @@ def main():
     predef = [[2365, 0, 0] for _ in range(100)]
     predef[0] =  [1710, -0.6, -1]
     short_action = []
-    tools_list_path = "/home/bili/Desktop/gen_env_llm/create/tool_documentation.json"
+    tools_list_path = os.path.join(REPO_DIR, "create", "tool_documentation.json")
     with open(tools_list_path, 'r') as file:
             tools_list = json.load(file)["tools"]
     for i in range(len(predef)):

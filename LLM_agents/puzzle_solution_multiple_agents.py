@@ -3,8 +3,8 @@ import replicate
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 ####### add your openai key
-os.environ["REPLICATE_API_TOKEN"] = ""
-os.environ['OPENAI_API_KEY'] = ''
+os.environ.setdefault("REPLICATE_API_TOKEN", "")
+os.environ.setdefault('OPENAI_API_KEY', '')
 from llama_index.core import (
     SimpleDirectoryReader,
     VectorStoreIndex,

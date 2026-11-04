@@ -28,4 +28,4 @@ The functions for all actions that an ReAct agent have access to are in the [LLM
 The files for running the three LLM approaches are in the [LLM_agents](./LLM_agents) folder. Each of the three approaches has two files corresponding to the puzzle solution task and puzzle generation task.
 
 ## Experiment Results
-The simulation images for each of the five attempts for all three approaches can be found in the [Experiment Results](./Experiment%20Results) folder.
+The simulation images for each of the five attempts for all three approaches can be found in the [Experiment Result](./Experiment%20Result) folder.
